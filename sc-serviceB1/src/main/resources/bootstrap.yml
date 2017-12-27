@@ -1,0 +1,35 @@
+server:
+  port: 8220
+
+spring:
+  application:
+    name: serviceb1
+  cloud:
+    config:
+      failFast: true
+      discovery:
+        enabled: true
+        serviceId: configserver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+
+ribbon:
+  eager-load:
+    enabled: true
+
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true

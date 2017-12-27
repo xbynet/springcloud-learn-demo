@@ -1,0 +1,25 @@
+server:
+  port: 8330
+
+spring:
+  application:
+    name: hystrix-dashboard
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+
+turbine:
+  #stream:
+  #  port: 8333
+  appConfig: servicea1,serviceb1
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")

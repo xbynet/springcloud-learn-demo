@@ -1,0 +1,9 @@
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+
+management:
+  security:
+    enabled: false

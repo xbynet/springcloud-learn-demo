@@ -1,0 +1,46 @@
+server:
+  port: 8110
+
+spring:
+  #profiles.active: dev
+  #profiles: dev
+  application:
+    name: servicea1
+  cloud:
+    config:
+      #profile: dev
+      #label: master
+      failFast: true
+      discovery:
+        enabled: true
+        serviceId: configserver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+
+
+ribbon:
+  eager-load:
+    enabled: true
+
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  client:
+    config:
+      default:
+        #connectTimeout: 5000
+        #readTimeout: 5000
+        loggerLevel: full

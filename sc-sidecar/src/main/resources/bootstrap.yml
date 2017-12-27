@@ -1,0 +1,29 @@
+server:
+  port: 8420
+
+spring:
+  application:
+    name: sc-sidecar
+  cloud:
+    config:
+      failFast: true
+      discovery:
+        enabled: true
+        serviceId: configserver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+management:
+  security:
+    enabled: false
+
+sidecar:
+  port: 4000
+  health-uri: http://localhost:4000/health
